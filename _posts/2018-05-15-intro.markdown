@@ -2,7 +2,7 @@
 layout: post
 title:  "Depth-resolved fiber photometry with a single tapered optical fiber implant"
 date:   2019-05-15 21:21:53 +00:00
-image: /images/intro.jpg
+image: /images/photometry_image.png
 categories: research
 course: "16-824: Visual Learning and Recognition"
 author: "Filippo Pisano, Marco Pisanello, Suk Joon Lee, **Jaeeon Lee**, Emanuela Maglie, Antonio Balena, Leonardo Sileo, Barbara Spagnolo, Marco Bianco, Minsuk Hyun, Massimo De Vittorio, Bernardo L Sabatini, Ferruccio Pisanello"
