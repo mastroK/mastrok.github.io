@@ -3,7 +3,7 @@ layout: post
 title:  "Stochastic Sampling of Parametric Policies"
 date:   2018-05-05 21:21:53 +00:00
 image: /images/stochopt.png
-categories: CMU
+categories: research
 course: "16-745: Dynamic Optimization"
 author: "Leo Keselman"
 paper: /pdfs/16745_lkeselma.pdf
