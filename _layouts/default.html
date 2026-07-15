@@ -1,153 +1,186 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
- 
 <head>
-  <title>Kevin Mastro</title>
+  <title>Kevin J. Mastro</title>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="author" content="Kevin J. Mastro" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
- 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
     :root {
-      --bg:        #F8F7F4;
-      --text:      #1A1A1A;
-      --muted:     #5C5C5C;
-      --accent:    #4A6FA5;
-      --accent-lt: #EAF0F8;
-      --rule:      #DDDBD6;
-      --max-w:     820px;
+      --bg: #F9F8F5;
+      --text: #1C1C1A;
+      --muted: #5A5956;
+      --accent: #3A5F8A;
+      --accent-pale: #EBF0F7;
+      --rule: #E0DED9;
+      --max: 800px;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
     }
+ 
+    html { background: var(--bg); }
  
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Lora', Georgia, serif;
+      font-family: var(--serif);
       font-size: 16px;
-      line-height: 1.7;
-      padding: 0 1.5rem;
+      line-height: 1.72;
+      padding: 0 1.25rem;
     }
  
     .page {
-      max-width: var(--max-w);
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 3rem 0 5rem;
+      padding: 0 0 5rem;
+    }
+ 
+    /* ── TOP ACCENT BAR ── */
+    .top-bar {
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 3rem;
     }
  
     /* ── HEADER ── */
     .header {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr 190px;
       gap: 2.5rem;
       align-items: start;
+      margin-bottom: 3rem;
       padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--rule);
-      margin-bottom: 2.5rem;
     }
  
-    .header-text h1 {
-      font-family: 'Inter', sans-serif;
-      font-size: 2rem;
+    .header h1 {
+      font-family: var(--sans);
+      font-size: 1.9rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 0.2rem;
     }
  
-    .header-text .role {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+    .header .role {
+      font-family: var(--sans);
+      font-size: 0.78rem;
       font-weight: 500;
-      color: var(--muted);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
     }
  
-    .header-text p {
-      font-size: 0.97rem;
-      color: var(--text);
-      margin-bottom: 1rem;
+    .header p {
+      font-size: 0.96rem;
+      margin-bottom: 0.9rem;
     }
  
-    .header-photo img {
-      width: 100%;
-      border-radius: 4px;
-      display: block;
-    }
- 
-    /* ── LINKS ROW ── */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-      margin-top: 1.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-    }
- 
-    .links a {
+    .header p a {
       color: var(--accent);
       text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border-bottom: 1.5px solid transparent;
-      transition: border-color 0.15s;
+      border-bottom: 1px solid var(--accent-pale);
     }
  
-    .links a:hover { border-bottom-color: var(--accent); }
+    .header p a:hover {
+      border-bottom-color: var(--accent);
+    }
  
-    .links span { color: var(--rule); }
+    .photo img {
+      width: 100%;
+      display: block;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+    }
  
-    /* ── SECTION ── */
-    section { margin-bottom: 3rem; }
+    /* ── NAV LINKS ── */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0;
+      margin-top: 1.4rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
  
-    .section-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+    .nav a {
       color: var(--accent);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      letter-spacing: 0.04em;
     }
+ 
+    .nav a:hover { text-decoration: underline; }
+ 
+    .nav .sep {
+      color: var(--rule);
+      margin: 0 0.6rem;
+    }
+ 
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1.5px solid var(--accent);
+    }
+ 
+    section { margin-bottom: 3.5rem; }
  
     /* ── PAPER ROW ── */
     .paper {
       display: grid;
-      grid-template-columns: 140px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 1.5rem;
-      padding: 1.25rem 0;
+      padding: 1.4rem 0;
       border-bottom: 1px solid var(--rule);
     }
  
     .paper:last-child { border-bottom: none; }
  
-    .paper-thumb img {
-      width: 100%;
-      border-radius: 3px;
+    /* Lightbox thumbnail */
+    .thumb-link {
       display: block;
-      border: 1px solid var(--rule);
+      cursor: zoom-in;
     }
  
-    .paper-thumb-empty {
+    .thumb-link img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      border: 1px solid var(--rule);
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+ 
+    .thumb-link:hover img {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+      transform: translateY(-1px);
+    }
+ 
+    .thumb-empty {
       width: 100%;
       aspect-ratio: 4/3;
-      background: var(--accent-lt);
-      border-radius: 3px;
+      background: var(--accent-pale);
+      border-radius: 2px;
       border: 1px solid var(--rule);
     }
  
     .paper-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-family: var(--sans);
+      font-size: 0.92rem;
       font-weight: 600;
-      line-height: 1.35;
-      margin-bottom: 0.35rem;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
     }
  
     .paper-title a {
@@ -158,9 +191,11 @@
     .paper-title a:hover { color: var(--accent); }
  
     .paper-authors {
-      font-size: 0.85rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
       color: var(--muted);
       margin-bottom: 0.2rem;
+      line-height: 1.5;
     }
  
     .paper-authors strong {
@@ -169,44 +204,81 @@
     }
  
     .paper-venue {
-      font-size: 0.82rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
       font-style: italic;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
  
     .paper-blurb {
       font-size: 0.88rem;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.6;
     }
  
-    /* ── SERVICE ITEMS ── */
-    .service-item {
+    /* ── SERVICE ── */
+    .service-row {
       display: grid;
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 100px 1fr;
       gap: 1rem;
-      padding: 0.6rem 0;
+      padding: 0.65rem 0;
       border-bottom: 1px solid var(--rule);
       font-size: 0.9rem;
     }
  
-    .service-item:last-child { border-bottom: none; }
+    .service-row:last-child { border-bottom: none; }
  
     .service-year {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
       color: var(--muted);
-      padding-top: 0.05rem;
+      padding-top: 0.1rem;
     }
+ 
+    /* ── LIGHTBOX ── */
+    #lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+ 
+    #lb-overlay.open { display: flex; }
+ 
+    #lb-overlay img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 3px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+ 
+    #lb-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      font-family: var(--sans);
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.85;
+    }
+ 
+    #lb-close:hover { opacity: 1; }
  
     /* ── FOOTER ── */
     footer {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--rule);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
       color: var(--rule);
       text-align: center;
     }
@@ -214,232 +286,197 @@
     footer a { color: var(--rule); }
  
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .header { grid-template-columns: 1fr; }
-      .header-photo { order: -1; max-width: 160px; }
-      .paper { grid-template-columns: 1fr; }
-      .paper-thumb { max-width: 200px; }
+    @media (max-width: 580px) {
+      .header {
+        grid-template-columns: 1fr;
+      }
+      .photo {
+        order: -1;
+        max-width: 150px;
+      }
+      .paper {
+        grid-template-columns: 1fr;
+      }
+      .thumb-link, .thumb-empty {
+        max-width: 180px;
+      }
     }
   </style>
 </head>
- 
 <body>
+ 
+<!-- Lightbox overlay -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <span id="lb-close" aria-label="Close">&times;</span>
+  <img id="lb-img" src="" alt="">
+</div>
+ 
 <div class="page">
+ 
+  <div class="top-bar"></div>
  
   <!-- HEADER -->
   <div class="header">
-    <div class="header-text">
+    <div>
       <h1>Kevin J. Mastro</h1>
-      <div class="role">Postdoctoral Fellow &nbsp;·&nbsp; Harvard Medical School</div>
+      <div class="role">Postdoctoral Fellow &nbsp;&middot;&nbsp; Harvard Medical School</div>
  
-      <p>
-        The world is uncertain, and navigating it successfully requires the brain to continuously build
-        and update internal models that guide behavior. A fundamental tension in this process is knowing
-        when to exploit what you already know and when to abandon it to explore new possibilities.
-        I study how the brain solves this problem and how that solution changes across the lifespan.
-      </p>
-      <p>
-        My research program combines behavioral computation, circuit physiology, and cross-species
-        comparison to reveal the algorithms and cellular mechanisms that govern exploration and
-        exploitation in mouse and common marmoset. Using the same computational framework across both
-        species, I ask what changes with age, why those changes occur, and what cellular and circuit
-        mechanisms drive them. My lab will pursue this question from behavior to synapse.
-      </p>
-      <p>
-        I am jointly mentored by
-        <a href="https://sabatini.hms.harvard.edu/">Bernardo Sabatini</a> and
-        <a href="https://www.stevenslab.org/">Beth Stevens</a>
-        at Harvard Medical School, Boston Children's Hospital, and the Broad Institute.
-        Beyond the lab, I am committed to building inclusive scientific communities and have served
-        as Head Teaching Fellow for MCB 80 and as a Residential Advisor at Harvard College.
-      </p>
+      <p>The world is uncertain, and navigating it successfully requires the brain to continuously build and update internal models that guide behavior. A fundamental tension in this process is knowing when to exploit what you already know and when to abandon it to explore new possibilities. I study how the brain solves this problem and how that solution changes across the lifespan.</p>
  
-      <div class="links">
+      <p>My research program combines behavioral computation, circuit physiology, and cross-species comparison to reveal the algorithms and cellular mechanisms that govern exploration and exploitation in mouse and common marmoset. Using the same computational framework across both species, I ask what changes with age, why those changes occur, and what cellular and circuit mechanisms drive them. My lab will pursue this question from synapse to behavior</p>
+ 
+      <p>I am jointly mentored by <a href="https://sabatini.hms.harvard.edu/">Bernardo Sabatini</a> and <a href="https://www.stevenslab.org/">Beth Stevens</a> at Harvard Medical School, Boston Children's Hospital, and the Broad Institute. Beyond the lab, I am committed to building inclusive scientific communities and have served as Head Teaching Fellow for MCB&nbsp;80 and as a Residential Advisor at Harvard College.</p>
+ 
+      <nav class="nav" aria-label="External profiles">
         <a href="pdfs/CV_Mastro_Jul2026.pdf">CV</a>
-        <span>/</span>
+        <span class="sep">/</span>
         <a href="https://scholar.google.com/citations?user=2sgO0kEAAAAJ&hl=en&oi=ao">Google Scholar</a>
-        <span>/</span>
+        <span class="sep">/</span>
         <a href="https://www.linkedin.com/in/kevin-mastro/">LinkedIn</a>
-        <span>/</span>
+        <span class="sep">/</span>
         <a href="https://orcid.org/0000-0003-4219-5769">ORCID</a>
-      </div>
+      </nav>
     </div>
  
-    <div class="header-photo">
+    <div class="photo">
       <img src="images/Mastro_2023_headshot.jpeg" alt="Kevin Mastro">
     </div>
   </div>
  
-  <!-- POSTDOC PUBLICATIONS -->
+  <!-- POSTDOC RESEARCH -->
   <section>
     <div class="section-label">Postdoctoral Research</div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Marmoset_BioRxiv_2026.png" alt="Marmoset decision-making paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.biorxiv.org/content/10.64898/2026.06.30.734629v1">
-            Reward predictability shapes decision-making states and exploitative control in marmosets
-          </a>
-        </div>
+      <a class="thumb-link" href="images/Marmoset_BioRxiv_2026.png" data-lb>
+        <img src="images/Marmoset_BioRxiv_2026.png" alt="Marmoset decision-making states figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.biorxiv.org/content/10.64898/2026.06.30.734629v1">Reward predictability shapes decision-making states and exploitative control in marmosets</a></div>
         <div class="paper-authors"><strong>KJ Mastro</strong>, L Stanwicks, K Lord-Arond, E Schoenbeck, AJ Melain, MJ Johnson, BL Sabatini, BL Stevens</div>
-        <div class="paper-venue">bioRxiv, 2026 &nbsp;·&nbsp; In review</div>
-        <div class="paper-blurb">Identified distinct, persistent behavioral states of exploitation and exploration in common marmosets and showed that reward predictability reorganizes the distribution and stability of these states.</div>
+        <div class="paper-venue">bioRxiv 2026 &middot; In review</div>
+        <div class="paper-blurb">Identified distinct, persistent behavioral states of exploitation and exploration in common marmosets and showed that reward predictability reorganizes the distribution and stability of those states.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Mastro_PFC_devo_2025.png" alt="Frontal cortex development paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2024.05.24.595609v2">
-            Delayed developmental maturation of frontal cortical circuits impacts decision-making
-          </a>
-        </div>
+      <a class="thumb-link" href="images/Mastro_PFC_devo_2025.png" data-lb>
+        <img src="images/Mastro_PFC_devo_2025.png" alt="Frontal cortex development figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.biorxiv.org/content/10.1101/2024.05.24.595609v2">Delayed developmental maturation of frontal cortical circuits impacts decision-making</a></div>
         <div class="paper-authors"><strong>KJ Mastro</strong>, WC Lee, W Wang, BL Stevens, BL Sabatini</div>
-        <div class="paper-venue">bioRxiv, 2025 &nbsp;·&nbsp; In review</div>
+        <div class="paper-venue">bioRxiv 2025 &middot; In review</div>
         <div class="paper-blurb">Showed that opponent maturation of PV- and SST-mediated inhibition in mouse medial prefrontal cortex drives age-dependent shifts in decision-making strategy across postnatal development.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb-empty"></div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://doi.org/10.1073/pnas.2423367122">
-            Reciprocal projections between the globus pallidus externa and cortex span motor and nonmotor regions
-          </a>
-        </div>
-        <div class="paper-authors">EA Ferenczi, W Wang, A Biswas, T Pottala, Y Dong, … <strong>KJ Mastro</strong>, BL Sabatini</div>
-        <div class="paper-venue">Proceedings of the National Academy of Sciences, 2025</div>
+      <div class="thumb-empty"></div>
+      <div>
+        <div class="paper-title"><a href="https://doi.org/10.1073/pnas.2423367122">Reciprocal projections between the globus pallidus externa and cortex span motor and nonmotor regions</a></div>
+        <div class="paper-authors">EA Ferenczi, W Wang, A Biswas, T Pottala, Y Dong, &hellip; <strong>KJ Mastro</strong>, BL Sabatini</div>
+        <div class="paper-venue">PNAS 2025</div>
         <div class="paper-blurb">Mapped reciprocal GPe-cortex projections across motor and nonmotor territories, revealing broad pallidal influence on cortical function beyond classic motor control circuits.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb-empty"></div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://doi.org/10.1016/j.cell.2024.05.058">
-            Microglial-derived C1q integrates into neuronal ribonucleoprotein complexes and impacts protein homeostasis in the aging brain
-          </a>
-        </div>
-        <div class="paper-authors">N Scott-Hewitt, M Mahoney, Y Huang, N Korte, … <strong>KJ Mastro</strong>, … B Stevens</div>
-        <div class="paper-venue">Cell, 2024</div>
+      <div class="thumb-empty"></div>
+      <div>
+        <div class="paper-title"><a href="https://doi.org/10.1016/j.cell.2024.05.058">Microglial-derived C1q integrates into neuronal ribonucleoprotein complexes and impacts protein homeostasis in the aging brain</a></div>
+        <div class="paper-authors">N Scott-Hewitt, M Mahoney, Y Huang, N Korte, &hellip; <strong>KJ Mastro</strong>, &hellip; B Stevens</div>
+        <div class="paper-venue">Cell 2024</div>
         <div class="paper-blurb">Discovered that microglial complement protein C1q enters neurons and integrates into ribonucleoprotein complexes, implicating microglia-to-neuron protein transfer as a mechanism of age-related decline.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Wilton_Mastro_2023.png" alt="Huntington's disease paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.nature.com/articles/s41591-023-02566-3">
-            Microglia and complement mediate early corticostriatal synapse loss and cognitive dysfunction in Huntington's disease
-          </a>
-        </div>
+      <a class="thumb-link" href="images/Wilton_Mastro_2023.png" data-lb>
+        <img src="images/Wilton_Mastro_2023.png" alt="Huntington's disease synapse loss figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.nature.com/articles/s41591-023-02566-3">Microglia and complement mediate early corticostriatal synapse loss and cognitive dysfunction in Huntington's disease</a></div>
         <div class="paper-authors">DK Wilton, <strong>KJ Mastro</strong>, BL Stevens</div>
-        <div class="paper-venue">Nature Medicine, 2023</div>
+        <div class="paper-venue">Nature Medicine 2023</div>
         <div class="paper-blurb">Demonstrated that microglia-mediated complement-dependent synapse elimination drives early corticostriatal synapse loss and cognitive deficits in mouse models and human Huntington's disease tissue.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Dimidschstein_2020.png" alt="Interneuron viral tools paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.nature.com/articles/s41593-020-0692-9">
-            Viral manipulation of functionally distinct interneurons in mice, non-human primates and humans
-          </a>
-        </div>
-        <div class="paper-authors">D Vormstein-Schneider, JD Lin, <em>et al.</em>, <strong>KJ Mastro</strong>, … J Dimidschstein</div>
-        <div class="paper-venue">Nature Neuroscience, 2020</div>
+      <a class="thumb-link" href="images/Dimidschstein_2020.png" data-lb>
+        <img src="images/Dimidschstein_2020.png" alt="Interneuron viral tools figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.nature.com/articles/s41593-020-0692-9">Viral manipulation of functionally distinct interneurons in mice, non-human primates and humans</a></div>
+        <div class="paper-authors">D Vormstein-Schneider, JD Lin, <em>et al.</em>, <strong>KJ Mastro</strong>, &hellip; J Dimidschstein</div>
+        <div class="paper-venue">Nature Neuroscience 2020</div>
         <div class="paper-blurb">Validated a PV-specific viral promoter across rodent, non-human primate, and human cortex, enabling cell-type-targeted circuit manipulation in species where genetic tools are limited.</div>
       </div>
     </div>
   </section>
  
-  <!-- PHD PUBLICATIONS -->
+  <!-- PHD RESEARCH -->
   <section>
-    <div class="section-label">PhD Research &nbsp;·&nbsp; Gittis Lab, Carnegie Mellon University</div>
+    <div class="section-label">PhD Research &nbsp;&middot;&nbsp; Gittis Lab, Carnegie Mellon University</div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Mastro_2017.png" alt="Nature Neuroscience 2017 paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.nature.com/articles/nn.4559">
-            Cell-specific pallidal intervention induces long-lasting motor recovery in dopamine-depleted mice
-          </a>
-        </div>
+      <a class="thumb-link" href="images/Mastro_2017.png" data-lb>
+        <img src="images/Mastro_2017.png" alt="Nature Neuroscience 2017 figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.nature.com/articles/nn.4559">Cell-specific pallidal intervention induces long-lasting motor recovery in dopamine-depleted mice</a></div>
         <div class="paper-authors"><strong>KJ Mastro</strong>, KT Zitelli, AM Willard, KH Leblanc, AV Kravitz, AH Gittis</div>
-        <div class="paper-venue">Nature Neuroscience, 2017</div>
+        <div class="paper-venue">Nature Neuroscience 2017</div>
         <div class="paper-blurb">Showed that selective optogenetic activation of PV-positive globus pallidus neurons suppresses pathological basal ganglia bursting and produces sustained motor recovery in a Parkinson's disease mouse model.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb-empty"></div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://elifesciences.org/articles/42746">
-            State transitions in the substantia nigra reticulata predict the onset of motor deficits in models of progressive dopamine depletion in mice
-          </a>
-        </div>
+      <div class="thumb-empty"></div>
+      <div>
+        <div class="paper-title"><a href="https://elifesciences.org/articles/42746">State transitions in the substantia nigra reticulata predict the onset of motor deficits in models of progressive dopamine depletion in mice</a></div>
         <div class="paper-authors">AM Willard, BR Isett, TC Whalen, <strong>KJ Mastro</strong>, CS Ki, X Mao, AH Gittis</div>
-        <div class="paper-venue">eLife, 2019</div>
+        <div class="paper-venue">eLife 2019</div>
         <div class="paper-blurb">Identified that abnormal state transitions in basal ganglia output nuclei precede overt motor symptoms across multiple models of dopamine depletion, linking circuit dynamics to disease onset.</div>
       </div>
     </div>
  
     <div class="paper">
-      <div class="paper-thumb">
-        <img src="images/Mastro_2014.png" alt="J Neuroscience 2014 paper thumbnail">
-      </div>
-      <div class="paper-body">
-        <div class="paper-title">
-          <a href="https://www.jneurosci.org/content/34/6/2087">
-            Transgenic mouse lines subdivide external segment of the globus pallidus neurons and reveal distinct GPe output pathways
-          </a>
-        </div>
+      <a class="thumb-link" href="images/Mastro_2014.png" data-lb>
+        <img src="images/Mastro_2014.png" alt="J Neuroscience 2014 figure">
+      </a>
+      <div>
+        <div class="paper-title"><a href="https://www.jneurosci.org/content/34/6/2087">Transgenic mouse lines subdivide external segment of the globus pallidus neurons and reveal distinct GPe output pathways</a></div>
         <div class="paper-authors"><strong>KJ Mastro</strong>, RS Bouchard, HAK Holt, AH Gittis</div>
-        <div class="paper-venue">Journal of Neuroscience, 2014</div>
-        <div class="paper-blurb">Defined molecularly, anatomically, and physiologically distinct cell types within the globus pallidus externa, establishing a cell-type classification framework for basal ganglia circuit analysis.</div>
+        <div class="paper-venue">Journal of Neuroscience 2014</div>
+        <div class="paper-blurb">Defined molecularly, anatomically, and physiologically distinct cell types within the globus pallidus externa, establishing a classification framework for basal ganglia circuit analysis.</div>
       </div>
     </div>
   </section>
  
-  <!-- SELECTED SERVICE -->
+  <!-- TEACHING & SERVICE -->
   <section>
     <div class="section-label">Teaching &amp; Service</div>
  
-    <div class="service-item">
-      <div class="service-year">2021–2025</div>
+    <div class="service-row">
+      <div class="service-year">2021&ndash;2025</div>
       <div>Head Teaching Fellow, Introduction to Neurobiology (MCB 80), Harvard University</div>
     </div>
-    <div class="service-item">
-      <div class="service-year">2023–2025</div>
+    <div class="service-row">
+      <div class="service-year">2023&ndash;2025</div>
       <div>Gordon Research Seminar Co-Chair, Modulation of Neural Circuits and Behavior</div>
     </div>
-    <div class="service-item">
-      <div class="service-year">2020–2024</div>
+    <div class="service-row">
+      <div class="service-year">2020&ndash;2024</div>
       <div>Executive Member &amp; Education Subcommittee Chair, Diversity and Inclusion Committee, Department of Neurobiology, Harvard Medical School</div>
     </div>
-    <div class="service-item">
-      <div class="service-year">2020–present</div>
+    <div class="service-row">
+      <div class="service-year">2020&ndash;present</div>
       <div>Residential Advisor, Kirkland House, Harvard College</div>
     </div>
-    <div class="service-item">
-      <div class="service-year">2019–2024</div>
+    <div class="service-row">
+      <div class="service-year">2019&ndash;2024</div>
       <div>Teaching Fellow, Advanced Neurophysiology (MCB 115), Harvard University</div>
     </div>
   </section>
@@ -449,6 +486,38 @@
   </footer>
  
 </div>
+ 
+<script>
+  const overlay = document.getElementById('lb-overlay');
+  const lbImg   = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+ 
+  document.querySelectorAll('[data-lb]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      lbImg.src = el.getAttribute('href');
+      lbImg.alt = el.querySelector('img') ? el.querySelector('img').alt : '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+ 
+  function closeLb() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+ 
+  lbClose.addEventListener('click', closeLb);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLb();
+  });
+ 
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+ 
 </body>
 </html>
  
